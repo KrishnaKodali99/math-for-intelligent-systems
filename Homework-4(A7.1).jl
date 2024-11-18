@@ -1,7 +1,7 @@
 using DSP
 using Plots
 
-include("channel_equalization_data.jl")
+include("files/channel_equalization_data.jl")
 
 function stem_plot(points, title, show_xaxis=true)
     signal_plot = plot(points, st=:stem, legend=false, title=title, xlabel="Index", left_margin=5Plots.mm)
@@ -14,7 +14,6 @@ function stem_plot(points, title, show_xaxis=true)
     return signal_plot
 end
 
-#Plot c, h, c * h
 conv_ch = conv(c, h)
 
 plot1_1 = stem_plot(c, "Channel (c)")
@@ -24,7 +23,6 @@ plot1_3 = stem_plot(conv_ch, "Channel Impulse Response (h * c)")
 plot(plot1_1, plot1_2, plot1_3, layout=(3, 1), size=(600, 800))
 savefig("plots/ch-plot.png")
 
-#Plot s, y, y_tilde
 y = conv(c, s)
 y_tilde = conv(h, y)
 
@@ -45,7 +43,6 @@ plot3_2 = stem_plot(scap_eq[1:100], "Equalized Message (s^_eq)", false)
 plot(plot3_1, plot3_2, layout=(2, 1), size=(600, 800))
 savefig("plots/scap-plot.png")
 
-#Computer BER w.r.t scap, scap_eq
 count_scap = 0
 for index in 1:1000
     global count_scap

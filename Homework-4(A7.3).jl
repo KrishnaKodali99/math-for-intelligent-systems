@@ -1,7 +1,7 @@
 using WAV
 using DSP
 
-x, f = wavread("audio_filtering_original.wav");
+x, f = wavread("files/audio_filtering_original.wav");
 x = vec(x);
 
 wavplay(x, f);

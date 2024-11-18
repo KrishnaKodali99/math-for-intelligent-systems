@@ -26,3 +26,5 @@ Manifest.toml
 # Mac Files
 .DS_Store
 
+# Ignore the outputs of the files.
+files-output/
