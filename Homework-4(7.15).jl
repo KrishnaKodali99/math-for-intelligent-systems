@@ -13,7 +13,6 @@ function stem_plot(points, title, show_xaxis=true)
 end
 
 length_u = 50
-
 u = rand([-1, 1], length_u)
 
 c = [1, 0.7, -0.3]

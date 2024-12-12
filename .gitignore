@@ -28,3 +28,6 @@ Manifest.toml
 
 # Ignore the outputs of the files.
 files-output/
+
+# Ignore test file
+test.jl

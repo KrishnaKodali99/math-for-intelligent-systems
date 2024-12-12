@@ -2,7 +2,6 @@ using DSP
 using Plots
 
 length_u = 50
-
 u = rand([-1, 1], length_u)
 
 c = [1, 0.7, -0.3]
@@ -18,5 +17,6 @@ for (xi, zi) in zip(x, z)
     plot!([xi, xi], [0, zi], color=:black, lw=1, label="", alpha=0.5)
 end
 
-hline!([0], color=:black, lw=2, label="X-axis")  # Draw horizontal line for x-axis
+# Draw horizontal line for x-axis
+hline!([0], color=:black, lw=2, label="X-axis") 
 savefig("signal_plot.png")
